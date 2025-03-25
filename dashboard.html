@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarthana | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #c33764, #1d2671); /* UPDATED GRADIENT */
+      min-height: 100vh;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(45deg, #000000, #1a1a1a);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-size: 2rem;
+      background: linear-gradient(to right, #fc466b, #3f5efb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #eee;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: #ffeb3b;
+      transition: 0.4s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: #ffeb3b;
+    }
+    .dashboard-container {
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: #ffeb3b;
+    }
+    .card p, .card ul, .card blockquote {
+      font-size: 1rem;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .card ul li {
+      margin-bottom: 0.5rem;
+      list-style: none;
+    }
+    .card ul li a {
+      color: #ffeb3b;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .card ul li a:hover {
+      color: #fff200;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.4rem;
+      background: #ffeb3b;
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.4s;
+    }
+    .btn:hover {
+      background: #fff700;
+    }
+    footer {
+      background: linear-gradient(45deg, #000000, #1a1a1a);
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 4rem;
+      color: #bbb;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.6);
+    }
+
+    @media(max-width: 768px) {
+      nav a {
+        margin: 0 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header data-aos="fade-down">
+    <h1>Sarthana</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Current Affairs</a>
+      <a href="#">Topic Summarisation</a>
+      <a href="#">Mock Test</a>
+      <a href="#">Essay Writing</a>
+      <a href="#">Saved Notes</a>
+      <a href="#">NCERTs</a>
+    </nav>
+  </header>
+
+  <div class="dashboard-container">
+    <div class="card" data-aos="fade-up">
+      <h2>Welcome Back!</h2>
+      <p>Stay focused and persistent. Your UPSC journey is one step closer to success! 🌟</p>
+    </div>
+
+    <div class="card" data-aos="fade-right">
+      <h2>Quick Access</h2>
+      <ul>
+        <li><a href="#">📜 Current Affairs</a></li>
+        <li><a href="#">📝 Essay Practice</a></li>
+        <li><a href="#">🧠 Topic Summaries</a></li>
+        <li><a href="#">📚 NCERT Library</a></li>
+      </ul>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+      <h2>Quote of the Day</h2>
+      <blockquote>"Success doesn’t come from what you do occasionally, it comes from what you do consistently."</blockquote>
+    </div>
+
+    <div class="card" data-aos="flip-left">
+      <h2>Next Mock Test</h2>
+      <p>📅 28 March 2025<br>📖 Topic: Indian Economy</p>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+
+    <div class="card" data-aos="fade-left">
+      <h2>Saved Notes</h2>
+      <p>Review and revise your saved notes anytime.</p>
+      <a href="#" class="btn">View Notes</a>
+    </div>
+
+    <div class="card" data-aos="fade-up-right">
+      <h2>NCERT eBooks</h2>
+      <p>Access all essential NCERT books categorized for UPSC preparation.</p>
+      <a href="#" class="btn">Explore</a>
+    </div>
+
+  </div>
+
+  <footer data-aos="fade-up">
+    <p>© 2025 Sarthana. Crafted with passion & purpose.</p>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: false,
+      mirror: true
+    });
+  </script>
+</body>
+</html>
